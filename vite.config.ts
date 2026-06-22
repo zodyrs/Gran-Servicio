@@ -13,18 +13,26 @@ export default defineConfig({
       injectRegister: 'script',
       includeAssets: ['favicon.svg', 'icons.svg', 'icon-192.png', 'icon-512.png'],
       manifest: {
+        id: 'https://gran-servicio.vercel.app/?source=pwa',
         name: 'Gran Servicio',
         short_name: 'GranServicio',
         description: 'App de servicios y suscripciones conectada a Supabase.',
-        theme_color: '#0f172a',
-        background_color: '#0f172a',
-        display: 'standalone',
-        orientation: 'portrait',
+        dir: 'ltr',
+        lang: 'en',
         start_url: '/',
+        display: 'standalone',
+        background_color: '#0f172a',
+        theme_color: '#0f172a',
         scope: '/',
+        orientation: 'portrait',
+        categories: ['business', 'utilities'],
+        shortcuts: [
+          { name: 'Ver servicios', short_name: 'Servicios', url: '/servicios' },
+          { name: 'Registro profesional', short_name: 'Registro', url: '/registro-profesional' }
+        ],
         icons: [
-          { src: 'icon-192.png', sizes: '192x192', type: 'image/png' },
-          { src: 'icon-512.png', sizes: '512x512', type: 'image/png' }
+          { src: 'icon-192.png', sizes: '192x192', type: 'image/png', purpose: 'any maskable' },
+          { src: 'icon-512.png', sizes: '512x512', type: 'image/png', purpose: 'any maskable' }
         ]
       }
     })
